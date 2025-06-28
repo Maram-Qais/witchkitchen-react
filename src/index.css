@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Fondamento:ital@0;1&family=Fustat:wght@200..800&display=swap');
+
+@import "tailwindcss";
+
+body {
+  font-family: 'Fondamento', cursive;
+  @apply bg-gray-950 text-gray-100;
+
+
+}
