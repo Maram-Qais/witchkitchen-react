@@ -1,10 +1,62 @@
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
+import recipes from '../data/recipes';
+import { Flame, Droplets, Leaf, Wind, Sparkles } from 'lucide-react';
+
+
 
 
 
 
 function Home() {
+  const featuredRecipes = recipes.slice(0, 3);
+
+  const getElementClasses = (element) => {
+    switch (element) {
+      case 'Fire':
+        return {
+          badge: 'text-red-400',
+          hover: 'hover:bg-red-900/30 hover:shadow-red-500/40',
+        };
+      case 'Water':
+        return {
+          badge: 'text-blue-400',
+          hover: 'hover:bg-blue-900/30 hover:shadow-blue-400/40',
+        };
+      case 'Earth':
+        return {
+          badge: 'text-green-400',
+          hover: 'hover:bg-green-900/30 hover:shadow-green-500/40',
+        };
+      case 'Air':
+        return {
+          badge: 'text-cyan-400',
+          hover: 'hover:bg-cyan-900/30 hover:shadow-cyan-400/40',
+        };
+      default:
+        return {
+          badge: 'text-gray-300',
+          hover: 'hover:bg-gray-700/30 hover:shadow-md',
+        };
+    }
+  }
+
+    
+    const getElementIcon = (element) => {
+      switch (element) {
+        case 'Fire': return <Flame className="w-5 h-5 text-red-400" />;
+        case 'Water': return <Droplets className="w-5 h-5 text-blue-400" />;
+        case 'Earth': return <Leaf className="w-5 h-5 text-green-400" />;
+        case 'Air': return <Wind className="w-5 h-5 text-cyan-400" />;
+        default: return null;
+      }
+    };
+  
+  
+
+
+
+  
   return (
     <>
       <div className="py-24 flex flex-col justify-center items-center text-center px-4">
@@ -12,71 +64,49 @@ function Home() {
 
       </div>
 
-      {/* FEATURED SPELLS SECTION */}
       <section className="relative py-20 px-4 text-center">
-        <div className="text-4xl md:text-5xl font-jim text-cream mb-4 flex justify-center items-center gap-2">
-          Featured Spells <span className="animate-spin-slow">🥄</span>
-        </div>
-        <p className="text-forest/70 max-w-2xl mx-auto mb-12 font-work text-lg md:text-xl">
-          Begin your magical culinary journey with these enchanted recipes, carefully selected for their transformative properties and delicious outcomes.
-        </p>
+  <div className="text-4xl md:text-5xl font-jim text-cream mb-4 flex justify-center items-center gap-2">
+    Featured Spells <span className="animate-spin-slow">🥄</span>
+  </div>
+  <p className="text-forest/70 max-w-2xl mx-auto mb-12 font-work text-lg md:text-xl">
+    Begin your magical culinary journey with these enchanted recipes, carefully selected for their transformative properties and delicious outcomes.
+  </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {/* FIRE CARD */}
-          <div className="bg-[#0f0f1a] border border-gray-800 rounded-2xl p-6 text-left transition-all duration-300 hover:-translate-y-2 hover:bg-red-900/30 hover:shadow-red-500/40 hover:shadow-lg">
-            <div className="flex justify-between items-center mb-2">
-              <span className="text-red-400 font-work font-medium">🔥 Fire</span>
-              <span className="text-yellow-300">✨✨</span>
-            </div>
-            <h3 className="text-yellow-200 text-xl font-semibold mb-2">Phoenix Rising Stew</h3>
-            <p className="text-gray-300 font-work text-sm mb-4">
-              A fiery stew that ignites passion and courage within the soul.
-            </p>
-            <div className="flex justify-between items-center">
-              <span className="text-purple-400 font-work text-sm">Vitality</span>
-              <button className="text-yellow-200 border border-yellow-400 px-4 py-1 rounded hover:bg-yellow-400/10 transition">
-                Cast Spell
-              </button>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+    {featuredRecipes.map((recipe) => {
+      const elementClass = getElementClasses(recipe.element);
+      return (
+        <div
+          key={recipe.id}
+          className={`bg-[#0f0f1a] border border-gray-800 rounded-2xl p-6 text-left transition-all duration-300 hover:-translate-y-2 ${elementClass.hover}`}
+        >
+          <div className="flex justify-between items-center mb-2">
+            <span className={`flex items-center gap-1 font-work font-medium ${elementClass.badge}`}>
+              {getElementIcon(recipe.element)}
+              {recipe.element}
+            </span>
+            <div className="flex gap-1">
+              {[...Array(recipe.difficulty)].map((_, i) => (
+                <Sparkles key={i} className="w-4 h-4 text-yellow-300" />
+              ))}
             </div>
           </div>
 
-          {/* WATER CARD */}
-          <div className="bg-[#0f0f1a] border border-gray-800 rounded-2xl p-6 text-left transition-all duration-300 hover:-translate-y-2 hover:bg-blue-900/30 hover:shadow-blue-400/40 hover:shadow-lg">
-            <div className="flex justify-between items-center mb-2">
-              <span className="text-blue-400 font-work font-medium">💧 Water</span>
-              <span className="text-yellow-300">✨</span>
-            </div>
-            <h3 className="text-yellow-200 text-xl font-semibold mb-2">Moonwater Healing Soup</h3>
-            <p className="text-gray-300 font-work text-sm mb-4">
-              A silvery soup that soothes the spirit and heals emotional wounds.
-            </p>
-            <div className="flex justify-between items-center">
-              <span className="text-purple-400 font-work text-sm">Healing</span>
-              <button className="text-yellow-200 border border-yellow-400 px-4 py-1 rounded hover:bg-yellow-400/10 transition">
-                Cast Spell
-              </button>
-            </div>
-          </div>
+          <h3 className="text-yellow-200 text-xl font-semibold mb-2">{recipe.name}</h3>
+          <p className="text-gray-300 font-work text-sm mb-4">{recipe.description}</p>
 
-          {/* EARTH CARD */}
-          <div className="bg-[#0f0f1a] border border-gray-800 rounded-2xl p-6 text-left transition-all duration-300 hover:-translate-y-2 hover:bg-green-900/30 hover:shadow-green-500/40 hover:shadow-lg">
-            <div className="flex justify-between items-center mb-2">
-              <span className="text-green-400 font-work font-medium">🪴 Earth</span>
-              <span className="text-yellow-300">✨✨✨</span>
-            </div>
-            <h3 className="text-yellow-200 text-xl font-semibold mb-2">Earth Mother's Grounding Bread</h3>
-            <p className="text-gray-300 font-work text-sm mb-4">
-              A hearty, nurturing bread that connects you to the earth's stabilizing energy.
-            </p>
-            <div className="flex justify-between items-center">
-              <span className="text-purple-400 font-work text-sm">Protection</span>
-              <button className="text-yellow-200 border border-yellow-400 px-4 py-1 rounded hover:bg-yellow-400/10 transition">
-                Cast Spell
-              </button>
-            </div>
+          <div className="flex justify-between items-center">
+            <span className="text-purple-400 font-work text-sm">{recipe.intention}</span>
+            <button className="text-yellow-200 border border-yellow-400 px-4 py-1 rounded hover:bg-yellow-400/10 transition">
+              Cast Spell
+            </button>
           </div>
         </div>
-      </section>
+      );
+    })}
+  </div>
+</section>
+
 
       {/* CTA SECTION */}
       <section className="w-full bg-transparent py-20 text-center px-4">
