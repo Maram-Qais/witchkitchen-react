@@ -3,7 +3,7 @@ const recipes = [
       "id": "phoenix-stew",
       "name": "Phoenix Rising Stew",
       "description": "A fiery stew that ignites passion and courage within the soul, perfect for new beginnings.",
-      "intention": "Vitality",
+      "intention": "vitality",
       "element": "Fire",
       "difficulty": 2,
       "cookTime": "45 minutes",

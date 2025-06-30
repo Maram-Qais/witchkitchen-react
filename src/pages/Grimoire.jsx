@@ -1,48 +1,56 @@
+import { useState, useMemo } from 'react';
 import recipes from '../data/recipes';
-import { Link } from 'react-router-dom';
-import { Star, Trash2, Book, Sparkles, User } from 'lucide-react';
 import GrimoireFilterBar from '../components/GrimoireFilterBar';
-import { useState } from 'react';
 import SpellCard from '../components/SpellCard';
 
 function Grimoire() {
+  const [selectedElement, setSelectedElement] = useState('All');
+  const [selectedIntention, setSelectedIntention] = useState('All');
 
-  const [selectedElement, setSelectedElement] = useState('ALL')
-  const [selectedIntention, setSelectedIntention] = useState("All");
+  const filteredRecipes = useMemo(() => {
+    return recipes.filter((r) => {
+      const elementMatch =
+        selectedElement === 'All' || r.element === selectedElement;
+      const intentionMatch =
+        selectedIntention === 'All' ||
+        r.intention.toLowerCase() === selectedIntention.toLowerCase();
+      return elementMatch && intentionMatch;
+    });
+  }, [selectedElement, selectedIntention]);
 
-  const filteredRecipes = recipes.filter((r) => {
-    const elementMatch = selectedElement === "All" || r.element === selectedElement;
-    const intentionMatch = selectedIntention === "All" || r.intention === selectedIntention;
-    return elementMatch && intentionMatch;
-  });
-  
   return (
-    <>
-            <div className="py-24 flex flex-col justify-center items-center text-center px-4">
+    <>  
+      <div className="flex flex-col justify-center items-center text-center px-4">
+      <p className="text-center text-cream/70 italic text-sm mb-2 mt-2">
+  Unlock ancient recipes and mystical spells to nourish both body and soul.
+</p>
 
-         <h1 className="text-6xl md:text-7xl text-gray-100 drop-shadow-md">The Grimoire</h1>
-        <h3 className="mt-4 text-lg md:text-xl max-w-2xl text-gray-400">
-        Ancient recipes and mystical potions await your discovery. Each spell has been carefully crafted to nourish both body and soul.        </h3>
+
       </div>
-      
 
-
-      <GrimoireFilterBar
-  selectedElement={selectedElement}
-  setSelectedElement={setSelectedElement}
-  selectedIntention={selectedIntention}
-  setSelectedIntention={setSelectedIntention}
+      {/* Filters */}
+    <GrimoireFilterBar
+        selectedElement={selectedElement}
+        setSelectedElement={setSelectedElement}
+        selectedIntention={selectedIntention}
+        setSelectedIntention={setSelectedIntention}
       />
-      <p className='text-gray-300 text-center mt-4'>{ filteredRecipes.length} spells found</p>
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols gap-8 mt-10'>
-        {filteredRecipes.map((spell) =>
-          <SpellCard key={spell.id} recipe={spell} />
-        )}
+      {/* Result Count */}
+      <p className='text-gray-300 text-center mb-2 mt-2'>
+        
 
+        {filteredRecipes.length} spells found
+      </p>
+
+      {/* Spell Cards Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 px-4">
+        {filteredRecipes.map((recipe) => (
+          <SpellCard key={recipe.id} recipe={recipe} />
+        ))}
       </div>
     </>
-  )
+  );
 }
 
-export default Grimoire
+export default Grimoire;

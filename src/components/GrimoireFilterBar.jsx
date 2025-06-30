@@ -1,39 +1,47 @@
-import React from 'react'
-import recipes from '../data/recipes'
 
-function GrimoireFilterBar({selectedElement, setSelectedElement, selectedIntention, setSelectedIntention}) {
+function GrimoireFilterBar({
+  selectedElement,
+  setSelectedElement,
+  selectedIntention,
+  setSelectedIntention,
+}) {
+  const elements = ['All', 'Fire', 'Water', 'Earth', 'Air'];
+  const intentions = ['All', 'Healing', 'Vitality', 'Protection', 'Love'];
+
   return (
-      <div className='flex gap-3 flex-wrap justify-center'>
-          {['All', 'Fire', 'Water', 'Earth', 'Air'].map((element) => (
-              <button key={element}
-                  onClick={() => setSelectedElement(element)}
-                  className={`px-4 py-2 rounded-full ${
-                      selectedElement === element
-                      ? "bg-purple-700 text-white"
-                      :  "bg-purple-200 text-purple-800"
-                      }`}>
-                  {element}
+    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4 mb-8">
 
-              </button>
-          ))}
-      <div className="flex gap-3 flex-wrap justify-center mt-6">
-  {["All", "Healing", "Vitality", "Protection", "Love"].map((intention) => (
-    <button
-      key={intention}
-      onClick={() => setSelectedIntention(intention)}
-      className={`px-4 py-2 rounded-full ${
-        selectedIntention === intention
-          ? "bg-green-700 text-white"
-          : "bg-green-200 text-green-800"
-      }`}
-    >
-      {intention}
-    </button>
-  ))}
-</div>
-
+      
+    {/* Element Filter */}
+    <div className="w-full sm:w-60">
+      <label className="block text-xs text-purple-300 font-work mb-1">Element</label>
+      <select
+        value={selectedElement}
+        onChange={(e) => setSelectedElement(e.target.value)}
+        className="w-full bg-[#1c1b2a] text-cream border border-purple-500 px-3 py-2 rounded-md shadow-sm text-sm focus:outline-none focus:ring-1 focus:ring-purple-500 transition"
+      >
+        {['All', 'Fire', 'Water', 'Earth', 'Air'].map(el => (
+          <option key={el}>{el}</option>
+        ))}
+      </select>
     </div>
-  )
+  
+    {/* Intention Filter */}
+    <div className="w-full sm:w-60">
+      <label className="block text-xs text-green-300 font-work mb-1">Intention</label>
+      <select
+        value={selectedIntention}
+        onChange={(e) => setSelectedIntention(e.target.value)}
+        className="w-full bg-[#1c1b2a] text-cream border border-green-500 px-3 py-2 rounded-md shadow-sm text-sm focus:outline-none focus:ring-1 focus:ring-green-500 transition"
+      >
+        {['All', 'Healing', 'Vitality', 'Protection', 'Love'].map(intent => (
+          <option key={intent}>{intent}</option>
+        ))}
+      </select>
+    </div>
+  </div>
+  
+  );
 }
 
-export default GrimoireFilterBar
+export default GrimoireFilterBar;
