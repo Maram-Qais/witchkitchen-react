@@ -10,6 +10,7 @@ import Grimoire from './pages/Grimoire'
 import MySpells from './pages/MySpells'
 import About from './pages/About'
 import SignIn from './pages/SignIn'
+import SpellDetails from './pages/SpellDetails'
 
 function App() {
   return (
@@ -32,8 +33,12 @@ function App() {
     <div className="pt-24 px-4">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/grimoire" element={<Grimoire />} />
-        <Route path="/myspells" element={<MySpells />} />
+              <Route path="/grimoire" element={<Grimoire />} />
+              <Route path="/spell/:id" element={<SpellDetails />} />
+              
+
+              <Route path="/myspells" element={<MySpells />} />
+              
         <Route path="/about" element={<About />} />
         <Route path="/signin" element={<SignIn />} />
             </Routes>

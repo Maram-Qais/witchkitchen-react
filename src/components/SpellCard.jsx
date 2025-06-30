@@ -5,6 +5,7 @@ import PopupModal from './PopupModal';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+
 const elementColors = {
   Fire: {
     icon: '🔥',
@@ -66,7 +67,12 @@ function SpellCard({ recipe }) {
           </div>
         </div>
 
-        <h3 className="text-yellow-200 text-xl font-semibold mb-2">{recipe.name}</h3>
+        <Link to={`/spell/${recipe.id}`}>
+  <h3 className="text-yellow-200 text-xl font-semibold mb-2 hover:underline">
+    {recipe.name}
+  </h3>
+</Link>
+
         <p className="text-gray-300 font-work text-sm mb-4">{recipe.description}</p>
 
         <div className="flex justify-between items-center">
