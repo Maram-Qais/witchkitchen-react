@@ -55,7 +55,6 @@ function SpellCard({ recipe }) {
       <div
         className={`bg-[#0f0f1a] border border-gray-800 rounded-2xl p-6 text-left transition-all duration-300 hover:-translate-y-2 ${hover}`}
       >
-        {/* existing content */}
         <div className="flex justify-between items-center mb-2">
           <span className={`${badge} font-work font-medium`}>
             {icon} {recipe.element}

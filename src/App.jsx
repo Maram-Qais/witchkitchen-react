@@ -16,7 +16,6 @@ function App() {
     <>
    <BrowserRouter>
   <div className="relative min-h-screen w-full overflow-hidden text-gray-100 font-jim">
-    {/* Aurora Background */}
     <div className="absolute inset-0 -z-10">
     <div className="fixed inset-0 -z-10 h-full w-full">
         <Aurora
@@ -28,10 +27,8 @@ function App() {
       </div>
     </div>
 
-    {/* Layout */}
     <NavBar />
 
-    {/* Page content */}
     <div className="pt-24 px-4">
       <Routes>
         <Route path="/" element={<Home />} />

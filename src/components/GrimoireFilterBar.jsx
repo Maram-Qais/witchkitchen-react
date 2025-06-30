@@ -12,7 +12,6 @@ function GrimoireFilterBar({
     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4 mb-8">
 
       
-    {/* Element Filter */}
     <div className="w-full sm:w-60">
       <label className="block text-xs text-purple-300 font-work mb-1">Element</label>
       <select
@@ -26,7 +25,6 @@ function GrimoireFilterBar({
       </select>
     </div>
   
-    {/* Intention Filter */}
     <div className="w-full sm:w-60">
       <label className="block text-xs text-green-300 font-work mb-1">Intention</label>
       <select

@@ -5,6 +5,8 @@ import { Wand2, Sparkles, icons } from 'lucide-react'
 function NabBar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  import { useAuth } from '../hooks/useAuth';
+import { LogOut } from 'lucide-react';
 
 
   const navItems = [
