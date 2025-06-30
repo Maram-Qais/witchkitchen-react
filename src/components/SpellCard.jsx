@@ -78,9 +78,13 @@ function SpellCard({ recipe }) {
         <div className="flex justify-between items-center">
           <span className="text-purple-400 font-work text-sm">{recipe.intention}</span>
           <div className="flex gap-2 items-center">
-            <button className="text-yellow-200 border border-yellow-400 px-4 py-1 rounded hover:bg-yellow-400/10 transition">
-              Cast Spell
-            </button>
+          <Link
+  to={`/spell/${recipe.id}`}
+  className="text-yellow-200 border border-yellow-400 px-4 py-1 rounded hover:bg-yellow-400/10 transition"
+>
+  Cast Spell
+</Link>
+
             <button
               onClick={handleFavoriteClick}
               className="text-purple-300 hover:text-yellow-300 transition"

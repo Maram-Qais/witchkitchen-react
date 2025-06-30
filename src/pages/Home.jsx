@@ -97,9 +97,13 @@ function Home() {
 
           <div className="flex justify-between items-center">
             <span className="text-purple-400 font-work text-sm">{recipe.intention}</span>
-            <button className="text-yellow-200 border border-yellow-400 px-4 py-1 rounded hover:bg-yellow-400/10 transition">
-              Cast Spell
-            </button>
+            <Link
+  to={`/spell/${recipe.id}`}
+  className="text-yellow-200 border border-yellow-400 px-4 py-1 rounded hover:bg-yellow-400/10 transition"
+>
+  Cast Spell
+</Link>
+
           </div>
         </div>
       );
