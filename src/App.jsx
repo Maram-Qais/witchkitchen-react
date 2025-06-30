@@ -1,6 +1,10 @@
+import { useState, useEffect } from 'react';
+
 import NavBar from "./components/NavBar"
 import Aurora from './components/AuroraBackground'
 import Footer from './components/Footer';
+import Loader from './components/Loader';
+
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -14,6 +18,14 @@ import SpellDetails from './pages/SpellDetails'
 import NotFound from "./pages/NotFound";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+useEffect(() => {
+  const timer = setTimeout(() => setLoading(false), 2000);
+  return () => clearTimeout(timer);
+}, []);
+
+if (loading) return <Loader />;
   return (
     <>
    <BrowserRouter>
