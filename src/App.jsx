@@ -11,6 +11,7 @@ import MySpells from './pages/MySpells'
 import About from './pages/About'
 import SignIn from './pages/SignIn'
 import SpellDetails from './pages/SpellDetails'
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -31,7 +32,9 @@ function App() {
     <NavBar />
 
     <div className="pt-24 px-4">
-      <Routes>
+            <Routes>
+            <Route path="*" element={<NotFound />} />
+
         <Route path="/" element={<Home />} />
               <Route path="/grimoire" element={<Grimoire />} />
               <Route path="/spell/:id" element={<SpellDetails />} />
