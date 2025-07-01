@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar"
 import Aurora from './components/AuroraBackground'
 import Footer from './components/Footer';
 import Loader from './components/Loader';
+import ScrollToTop from './components/ScrollToTop';
 
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -28,7 +29,9 @@ useEffect(() => {
 if (loading) return <Loader />;
   return (
     <>
-   <BrowserRouter>
+      <BrowserRouter>
+      <ScrollToTop />
+
   <div className="relative min-h-screen w-full overflow-hidden text-gray-100 font-jim">
     <div className="absolute inset-0 -z-10">
     <div className="fixed inset-0 -z-10 h-full w-full">

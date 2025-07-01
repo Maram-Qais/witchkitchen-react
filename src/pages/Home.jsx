@@ -125,12 +125,16 @@ function Home() {
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <button className="px-8 py-4 rounded-full text-white bg-purple-600 hover:bg-purple-700 transition shadow-lg flex items-center gap-2 font-semibold">
-            Explore All Spells ✨
-          </button>
+        <Link to="/grimoire">
+  <button className="px-8 py-4 rounded-full text-white bg-purple-600 hover:bg-purple-700 transition shadow-lg flex items-center gap-2 font-semibold">
+    Explore All Spells ✨
+  </button>
+          </Link>
+          <Link to ="/about">
           <button className="px-8 py-4 rounded-full text-purple-300 border border-purple-500 hover:bg-purple-900/20 transition flex items-center gap-2 font-semibold">
             Learn Our Story 🌟
-          </button>
+            </button>
+          </Link>
         </div>
       </section>
     </>

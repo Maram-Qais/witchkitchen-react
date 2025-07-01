@@ -20,7 +20,7 @@ function NabBar() {
     <nav className='bg-black/80 text-gray-100 backdrop-blur-md shadow-lg fixed top-0 left-0 right-0 z-50'>
       <div className='max-w-7xl mx-auto px-4 py-4 flex justify-between items-center'>
         {/* Logo */}
-        <Link to="/" className="text-2xl tracking-wide hover:text-rose-300 transition-all font-bold glow-text">
+        <Link to="/" className="text-2xl tracking-wide hover:text-purple-300 transition-all font-bold glow-text">
           Witch Kitchen
         </Link>
 
@@ -30,8 +30,8 @@ function NabBar() {
             <Link
               key={item.label}
               to={item.path}
-              className={`flex items-center gap-2 font-medium hover:text-rose-300 transition-all ${
-                location.pathname === item.path ? 'text-rose-300' : 'text-gray-100'
+              className={`flex items-center gap-2 font-medium hover:text-purple-300 transition-all ${
+                location.pathname === item.path ? 'text-purple-300' : 'text-gray-100'
               }`}
             >
               {item.icon}
@@ -42,7 +42,7 @@ function NabBar() {
           {/* Auth Section */}
           {user ? (
             <div className="flex items-center gap-3">
-              <span className="text-sm text-rose-300 font-work">{user.name}</span>
+              <span className="text-sm text-purple-300 font-work">{user.name}</span>
               <button
                 onClick={logout}
                 className="text-gray-300 hover:text-red-500 transition"
@@ -54,8 +54,8 @@ function NabBar() {
           ) : (
             <Link
               to="/signin"
-              className={`flex items-center gap-2 font-medium hover:text-rose-300 transition-all ${
-                location.pathname === '/signin' ? 'text-rose-300' : 'text-gray-100'
+              className={`flex items-center gap-2 font-medium hover:text-purple-300 transition-all ${
+                location.pathname === '/signin' ? 'text-purple-300' : 'text-gray-100'
               }`}
             >
               <UserCircleGear size={20} />
@@ -81,8 +81,8 @@ function NabBar() {
               key={item.label}
               to={item.path}
               onClick={() => setIsOpen(false)}
-              className={`block py-2 flex items-center gap-2 font-medium hover:text-rose-300 transition-all ${
-                location.pathname === item.path ? 'text-rose-300' : 'text-gray-100'
+              className={`block py-2 flex items-center gap-2 font-medium hover:text-purple-300 transition-all ${
+                location.pathname === item.path ? 'text-purple-300' : 'text-gray-100'
               }`}
             >
               {item.icon}
@@ -93,7 +93,7 @@ function NabBar() {
           {/* Mobile Auth Section */}
           {user ? (
             <div className="flex items-center justify-between gap-3 pt-2 border-t border-gray-700 mt-4">
-              <span className="text-sm text-rose-300 font-work">{user.name}</span>
+              <span className="text-sm text-purple-300 font-work">{user.name}</span>
               <button
                 onClick={() => {
                   logout();
@@ -109,8 +109,8 @@ function NabBar() {
             <Link
               to="/signin"
               onClick={() => setIsOpen(false)}
-              className={`block py-2 flex items-center gap-2 font-medium hover:text-rose-300 transition-all ${
-                location.pathname === '/signin' ? 'text-rose-300' : 'text-gray-100'
+              className={`block py-2 flex items-center gap-2 font-medium hover:text-purple-300 transition-all ${
+                location.pathname === '/signin' ? 'text-purple-300' : 'text-gray-100'
               }`}
             >
               <UserCircleGear size={20} />
