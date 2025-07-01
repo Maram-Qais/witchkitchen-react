@@ -41,7 +41,7 @@ function Grimoire() {
         {filteredRecipes.length} spells found
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 px-4 mb-20">
         {filteredRecipes.map((recipe) => (
           <SpellCard key={recipe.id} recipe={recipe} />
         ))}

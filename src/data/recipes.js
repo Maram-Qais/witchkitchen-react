@@ -113,7 +113,84 @@ const recipes = [
         "Consume before meditation or spellwork."
       ],
       "notes": "Only brew during windstorms or during deep introspection."
-    }
+  },
+  {
+    id: "love-pie",
+    name: "Heartfire Love Pie",
+    description: "A warm, aromatic pie infused with enchantments of affection and romantic courage.",
+    intention: "Love",
+    element: "Fire",
+    difficulty: 2,
+    cookTime: "50 minutes",
+    servings: "6 slices",
+    ingredients: [
+      "2 cups of rose-infused berries",
+      "1/2 cup of honeyed figs",
+      "1 tsp of cinnamon bark",
+      "1 enchanted pie crust",
+      "1 tbsp of vanilla essence",
+      "A few dried hibiscus petals",
+      "1 egg (optional, for binding)",
+      "Pinch of star sugar"
+    ],
+    instructions: [
+      "Preheat the oven with a chant of warmth and longing.",
+      "Combine berries, figs, and spices in a sacred bowl.",
+      "Pour the mixture into the enchanted crust, sealing with intention.",
+      "Bake until golden and fragrant.",
+      "Serve warm under candlelight to ignite emotional bonds."
+    ],
+    notes: "Most powerful during Venus transits or under a waxing crescent moon."
+  },
+  {
+    id: "dream-syrup",
+    name: "Dreamwalker’s Syrup",
+    description: "A viscous, violet elixir that opens the gates of dreams and guides lucid journeys.",
+    intention: "Vision",
+    element: "Water",
+    difficulty: 1,
+    cookTime: "15 minutes",
+    servings: "1 small bottle",
+    ingredients: [
+      "1 cup of violet petals",
+      "1/2 cup of blue lotus extract",
+      "3 spoons of dream honey",
+      "1 pinch of crushed amethyst dust",
+      "2 drops of nightshade nectar"
+    ],
+    instructions: [
+      "Simmer petals and lotus in moonwater until color deepens.",
+      "Add honey and stir gently while meditating on a question.",
+      "Drop in nectar and amethyst dust, whispering your dreams.",
+      "Let cool and bottle in a dark vial."
+    ],
+    notes: "Take before sleep or ritual dreaming. Use sparingly under dark moon."
+  },
+  {
+    id: "solar-brew",
+    name: "Solar Radiance Brew",
+    description: "A bright, golden tea that fuels confidence, joy, and clarity.",
+    intention: "Empowerment",
+    element: "Fire",
+    difficulty: 1,
+    cookTime: "8 minutes",
+    servings: "2 cups",
+    ingredients: [
+      "2 tbsp dried calendula flowers",
+      "1 tsp lemon zest",
+      "1 drop golden sun oil",
+      "1 tsp raw honey",
+      "Pinch of cinnamon sun-dust"
+    ],
+    instructions: [
+      "Steep calendula and zest in hot spring water under sunlight.",
+      "Add cinnamon and golden oil. Stir in a clockwise motion.",
+      "Finish with honey and speak a word of power.",
+      "Drink with upright posture and open heart."
+    ],
+    notes: "Ideal for mornings before rituals, interviews, or important meetings."
+  }
+  
   ];
   
   export default recipes;
