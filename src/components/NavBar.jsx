@@ -11,8 +11,9 @@ function NabBar() {
 
   const navItems = [
     { label: 'Home', path: '/', icon: <House size={20} /> },
-    { label: 'MySpells', path: '/myspells', icon: <Wand2 size={20} /> },
     { label: 'Grimoire', path: '/grimoire', icon: <BookBookmark size={20} /> },
+
+    { label: 'MySpells', path: '/myspells', icon: <Wand2 size={20} /> },
     { label: 'About', path: '/about', icon: <Sparkles size={20} /> },
   ];
 
