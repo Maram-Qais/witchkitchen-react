@@ -26,11 +26,11 @@ function GrimoireFilterBar({
     </div>
   
     <div className="w-full sm:w-60">
-      <label className="block text-xs text-green-300 font-work mb-1">Intention</label>
+      <label className="block text-xs text-blue-600 font-work mb-1">Intention</label>
       <select
         value={selectedIntention}
         onChange={(e) => setSelectedIntention(e.target.value)}
-        className="w-full bg-[#1c1b2a] text-cream border border-green-500 px-3 py-2 rounded-md shadow-sm text-sm focus:outline-none focus:ring-1 focus:ring-green-500 transition"
+        className="w-full bg-[#1c1b2a] text-cream border border-blue-800 px-3 py-2 rounded-md shadow-sm text-sm focus:outline-none focus:ring-1 focus:ring-green-500 transition"
       >
         {['All', 'Healing', 'Vitality', 'Protection', 'Love'].map(intent => (
           <option key={intent}>{intent}</option>

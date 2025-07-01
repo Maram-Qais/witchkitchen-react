@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useAuth } from '../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { MoonStar } from 'lucide-react'	
 
 function SignIn() {
   const { signin } = useAuth();
@@ -21,14 +23,33 @@ function SignIn() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
+    <div className="min-h-screen flex items-center justify-center px-4 bg-black/10">
       <form
         onSubmit={handleSubmit}
-        className="bg-[#0f0f1a] border border-gray-800 p-8 rounded-2xl w-full max-w-md shadow-md"
+        className="bg-[#0f0f1a] border border-purple-900 p-8 rounded-2xl w-full max-w-md shadow-xl backdrop-blur-md"
       >
-        <h1 className="text-3xl font-jim text-center text-cream mb-6">Welcome back, Witch 🕯️</h1>
+        {/* Animated Header */}
+        <motion.h1
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl font-jim text-center text-cream mb-6 flex items-center justify-center gap-2"
+        >
+          <motion.div
+            animate={{ rotate: [0, -10, 10, -5, 5, 0] }}
+            transition={{ repeat: Infinity, duration: 2 }}
+          >
+            <MoonStar className="w-6 h-6 text-yellow-300" />
 
-        {error && <p className="text-red-400 text-sm mb-4 text-center">{error}</p>}
+          </motion.div>
+          Join the Circle
+        </motion.h1>
+
+        {error && (
+          <p className="text-red-400 text-sm mb-4 text-center font-work">
+            {error}
+          </p>
+        )}
 
         <label className="block text-cream font-work mb-2">Email</label>
         <input
@@ -48,9 +69,9 @@ function SignIn() {
 
         <button
           type="submit"
-          className="w-full bg-purple-600 text-white py-2 rounded hover:bg-purple-700 transition-all"
+          className="w-full bg-purple-600 text-white py-2 rounded hover:bg-purple-700 transition-all font-semibold tracking-wide"
         >
-          Sign In
+          Enter the Circle
         </button>
       </form>
     </div>

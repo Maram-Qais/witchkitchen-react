@@ -21,9 +21,15 @@ function NabBar() {
     <nav className='bg-black/80 text-gray-100 backdrop-blur-md shadow-lg fixed top-0 left-0 right-0 z-50'>
       <div className='max-w-7xl mx-auto px-4 py-4 flex justify-between items-center'>
         {/* Logo */}
-        <Link to="/" className="text-2xl tracking-wide hover:text-purple-300 transition-all font-bold glow-text">
-          Witch Kitchen
-        </Link>
+        <Link to="/" className="flex items-center gap-2">
+  <img
+    src="/logo2.png"
+    alt="Witch Kitchen Logo"
+    className="w-10 h-10 object-contain"
+  />
+</Link>
+
+      
 
         {/* Desktop Menu */}
         <div className='hidden md:flex space-x-6 items-center'>

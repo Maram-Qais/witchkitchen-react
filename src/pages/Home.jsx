@@ -11,31 +11,36 @@ function Home() {
       case 'Fire':
         return {
           badge: 'text-red-400',
+          base: 'bg-red-900/10',
           hover: 'hover:bg-red-900/20 hover:shadow-red-500/40',
           shadow: 'shadow-red-500/20',
         };
       case 'Water':
         return {
           badge: 'text-blue-400',
+          base: 'bg-blue-900/10',
           hover: 'hover:bg-blue-900/20 hover:shadow-blue-400/40',
           shadow: 'shadow-blue-400/20',
         };
       case 'Earth':
         return {
           badge: 'text-green-400',
+          base: 'bg-green-900/10',
           hover: 'hover:bg-green-900/20 hover:shadow-green-500/40',
           shadow: 'shadow-green-500/20',
         };
       case 'Air':
         return {
           badge: 'text-cyan-400',
+          base: 'bg-cyan-900/10',
           hover: 'hover:bg-cyan-900/20 hover:shadow-cyan-400/40',
           shadow: 'shadow-cyan-400/20',
         };
       default:
         return {
           badge: 'text-gray-300',
-          hover: 'hover:bg-gray-700/30 hover:shadow-md',
+          base: 'bg-gray-700/10',
+          hover: 'hover:bg-gray-700/20 hover:shadow-md',
           shadow: 'shadow-gray-500/20',
         };
     }
@@ -72,7 +77,7 @@ function Home() {
             return (
               <div
                 key={recipe.id}
-                className={`bg-[#0f0f1a] border border-gray-800 rounded-2xl p-6 text-left transition-all duration-300 transform hover:-translate-y-3 shadow-md ${elementClass.hover} ${elementClass.shadow}`}
+                className={`border border-gray-800 rounded-2xl p-6 text-left transition-all duration-300 transform hover:-translate-y-3 shadow-md ${elementClass.base} ${elementClass.hover} ${elementClass.shadow}`}
               >
                 <div className="flex justify-between items-center mb-2">
                   <span className={`flex items-center gap-1 font-work font-medium ${elementClass.badge}`}>
