@@ -189,7 +189,82 @@ const recipes = [
       "Drink with upright posture and open heart."
     ],
     notes: "Ideal for mornings before rituals, interviews, or important meetings."
+  },
+  {
+    id: "shadowmist-elixir",
+    name: "Shadowmist Elixir",
+    description: "A deep black potion that veils the self in secrecy and wards against intrusive energy.",
+    intention: "Protection",
+    element: "Earth",
+    difficulty: 2,
+    cookTime: "25 minutes",
+    servings: "1 small flask",
+    ingredients: [
+      "1 cup of elderberry juice",
+      "1/4 cup of activated charcoal water",
+      "3 black tourmaline chips (removed before drinking)",
+      "7 dried mugwort leaves",
+      "1 spoon of ash honey"
+    ],
+    instructions: [
+      "Steep mugwort in simmering elderberry juice under a waning moon.",
+      "Add charcoal water slowly while chanting a shielding incantation.",
+      "Stir in honey in a figure-eight motion.",
+      "Drop in the tourmaline for 3 minutes, whispering your protection.",
+      "Remove stones, cool, and bottle in opaque glass."
+    ],
+    notes: "Use during spiritual cleansing or when feeling energetically vulnerable. Do not consume more than one dose per day."
   }
+  ,
+  {
+    id: "serpents-whisper-tea",
+    name: "Serpent’s Whisper Tea",
+    description: "A deep green brew that sharpens intuition and opens psychic pathways.",
+    intention: "Insight",
+    element: "Air",
+    difficulty: 1,
+    cookTime: "12 minutes",
+    servings: "1 cup",
+    ingredients: [
+      "1 tsp of dried mugwort",
+      "1 tsp of jasmine flowers",
+      "1/2 tsp of peppermint",
+      "3 drops of obsidian-infused water",
+      "1 snake-shaped anise star"
+    ],
+    instructions: [
+      "Boil water and pour over herbs while visualizing a coiled serpent awakening.",
+      "Add obsidian water drop by drop while breathing deeply.",
+      "Place the anise star last and whisper your question aloud.",
+      "Steep for 5 minutes, then sip slowly in silence."
+    ],
+    notes: "Use before divination or spirit work. Best under waxing moon or stormy skies."
+  }
+,{
+  id: "solstice-fire-tonic",
+  name: "Solstice Fire Tonic",
+  description: "A golden, spicy blend that awakens confidence, vitality, and inner fire.",
+  intention: "Empowerment",
+  element: "Fire",
+  difficulty: 1,
+  cookTime: "10 minutes",
+  servings: "1 ritual shot",
+  ingredients: [
+    "1/2 cup of fresh orange juice",
+    "1 tsp of grated ginger root",
+    "3 dashes of cinnamon",
+    "1 drop of dragon’s blood resin (ethically sourced)",
+    "A twist of chili pepper"
+  ],
+  instructions: [
+    "Warm orange juice gently and add ginger while visualizing a rising sun.",
+    "Stir in cinnamon and chili, focusing on your solar plexus.",
+    "Add dragon’s blood and chant your name three times.",
+    "Drink warm with intention, preferably at sunrise."
+  ],
+  notes: "Perfect for rituals of courage, manifestation, or starting a bold new path."
+}
+    
   
   ];
   

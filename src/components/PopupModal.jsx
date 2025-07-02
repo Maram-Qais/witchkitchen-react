@@ -10,7 +10,7 @@ function PopupModal({ show, onClose, children }) {
           onClick={onClose}
           className="absolute top-2 right-2 text-gray-400 hover:text-cream"
         >
-          <X size={15} />
+          <X size={20} />
         </button>
         {children}
       </div>
